@@ -1,0 +1,24 @@
+{
+  "inputs": [
+    {
+      "id": "PERPLEXITY_API_KEY",
+      "description": "API key for Perplexity AI",
+      "type": "promptString"
+    }
+  ],
+  "servers": {
+    "perplexity": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "server-perplexity-ask"],
+      "env": {
+        "PERPLEXITY_API_KEY": "${input:PERPLEXITY_API_KEY}"
+      }
+    },
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+  }
+}
